@@ -24,8 +24,6 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="deep-purple accent-4" dark flat>
-      <v-app-bar-nav-icon app @click="drawer = !drawer"> </v-app-bar-nav-icon>
-
       <v-toolbar-title>Spin to win</v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -79,12 +77,53 @@
           </v-tab-item>
         </v-tabs-items>
       </v-card>
+        <v-card class="overflow-hidden mx-auto" align="center" justify="center" height="200" max-width="500">
+        <v-bottom-navigation 
+          horizontal
+          fixed
+          flat
+          dense
+        >
+          <v-btn color="accent-4"   @click="drawer = !drawer">
+            <center><v-icon>{{icons.mdiHomeAccount}}</v-icon></center>
+          </v-btn>
+
+          <v-btn color="accent-4"  @click="drawer = !drawer">
+            <center><v-icon>{{icons.mdiAccountGroupOutline }}</v-icon></center>
+          </v-btn>
+
+          <v-btn color="accent-4"  @click="drawer = !drawer">
+            <center><v-icon>{{icons.mdiCheckboxMarkedCirclePlusOutline}}</v-icon></center>
+          </v-btn>
+
+          <v-btn color="accent-4"  @click="drawer = !drawer">
+            <center><v-icon>{{icons.mdiBallotRecountOutline}}</v-icon></center>
+          </v-btn>
+
+          <v-btn color="accent-4"  @click="drawer = !drawer">
+            <center> <v-icon>{{icons.mdiAccountDetailsOutline}}</v-icon></center>
+          </v-btn>
+        </v-bottom-navigation>
+
+        <v-responsive
+          id="hide-on-scroll-example"
+          class="overflow-y-auto"
+          max-height="600"
+        >
+          <v-responsive height="1500"></v-responsive>
+        </v-responsive>
+      </v-card>
     </main>
   </v-container>
 </template>
 
 <script>
-import { mdiAccountMultipleCheck } from '@mdi/js';
+import { mdiAccountMultipleCheck,
+        mdiHomeAccount,
+        mdiAccountGroupOutline,
+        mdiCheckboxMarkedCirclePlusOutline,
+        mdiBallotRecountOutline,
+        mdiAccountDetailsOutline } from '@mdi/js';
 export default {
   name: "HelloWorld",
   data() {
@@ -102,7 +141,12 @@ export default {
           { title: 'Users', icon: 'mdi-account-group-outline' },
         ],
       icons:{
-        mdiAccountMultipleCheck
+        mdiAccountMultipleCheck,
+        mdiAccountGroupOutline,
+        mdiHomeAccount,
+        mdiCheckboxMarkedCirclePlusOutline,
+        mdiBallotRecountOutline,
+        mdiAccountDetailsOutline
       },
       right: null,
     };
