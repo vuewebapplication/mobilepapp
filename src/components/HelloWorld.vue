@@ -77,11 +77,10 @@
           </v-tab-item>
         </v-tabs-items>
       </v-card>
-        <v-card class="overflow-hidden mx-auto" align="center" justify="center" height="200" max-width="500">
+        <v-card class="overflow-hidden mx-auto"  height="250" >
         <v-bottom-navigation 
           fixed
           flat
-          dense
         >
           <v-btn color="accent-4"   @click="drawer = !drawer">
              <span>Home</span>
