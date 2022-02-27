@@ -79,28 +79,32 @@
       </v-card>
         <v-card class="overflow-hidden mx-auto" align="center" justify="center" height="200" max-width="500">
         <v-bottom-navigation 
-          horizontal
           fixed
           flat
           dense
         >
           <v-btn color="accent-4"   @click="drawer = !drawer">
+             <span>Home</span>
             <center><v-icon>{{icons.mdiHomeAccount}}</v-icon></center>
           </v-btn>
 
           <v-btn color="accent-4"  @click="drawer = !drawer">
+             <span>Member</span>
             <center><v-icon>{{icons.mdiAccountGroupOutline }}</v-icon></center>
           </v-btn>
 
           <v-btn color="accent-4"  @click="drawer = !drawer">
+             <span>Tasks</span>
             <center><v-icon>{{icons.mdiCheckboxMarkedCirclePlusOutline}}</v-icon></center>
           </v-btn>
 
           <v-btn color="accent-4"  @click="drawer = !drawer">
+             <span>Record</span>
             <center><v-icon>{{icons.mdiBallotRecountOutline}}</v-icon></center>
           </v-btn>
 
           <v-btn color="accent-4"  @click="drawer = !drawer">
+             <span>My</span>
             <center> <v-icon>{{icons.mdiAccountDetailsOutline}}</v-icon></center>
           </v-btn>
         </v-bottom-navigation>
