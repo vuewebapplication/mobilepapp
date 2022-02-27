@@ -162,6 +162,9 @@ export default {
 };
 </script>
 <style>
+.v-item-group.v-bottom-navigation--fixed{
+  height: 93px  !important;
+}
 .v-app-bar--fixed{
 height: 64px;
     margin-top: 0px;
