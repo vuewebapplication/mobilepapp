@@ -41,23 +41,16 @@
       </v-btn>
     </v-app-bar>
 
-   
     <main>
-
-      <v-card
-    class="mx-auto overflow-hidden"
-    max-width="500"
-  >
-
-  
-    <v-bottom-navigation
-     absolute
-      color="white"
-      hide-on-scroll
-      scroll-target="#scroll-threshold-example"
-      scroll-threshold="500"
-    >
-       <v-btn color="accent-4" @click="drawer = !drawer">
+      <v-card class="mx-auto overflow-hidden" max-width="500">
+        <v-bottom-navigation
+          absolute
+          color="white"
+          hide-on-scroll
+          scroll-target="#scroll-threshold-example"
+          scroll-threshold="500"
+        >
+          <v-btn color="accent-4" @click="drawer = !drawer">
             <span>Home</span>
             <center>
               <v-icon>{{ icons.mdiHomeAccount }}</v-icon>
@@ -91,33 +84,31 @@
               <v-icon>{{ icons.mdiAccountDetailsOutline }}</v-icon>
             </center>
           </v-btn>
-    </v-bottom-navigation>
+        </v-bottom-navigation>
 
-    <v-sheet
-      id="scroll-threshold-example"
-      class="overflow-y-auto pb-16"
-      max-height="90vh"
-    >
-      <v-responsive height="100vh">
-
-         <v-parallax
-      dark
-      height="350"
-      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-    >
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h1 class="text-h4 font-weight-thin mb-4">PHP 1000.00 test</h1>
-          <h4 class="subheading">Winning Prices</h4>
-        </v-col>
-      </v-row>
-    </v-parallax>
-    
-      </v-responsive>
-    </v-sheet>
-  </v-card>
-   
-    
+        <v-sheet
+          id="scroll-threshold-example"
+          class="overflow-y-auto pb-16"
+          height="90vh"
+        >
+          <v-responsive min-height="73vh">
+            <v-parallax
+              dark
+              height="250"
+              src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+            >
+              <v-row align="center" justify="center">
+                <v-col class="text-center" cols="12">
+                  <h1 class="text-h4 font-weight-thin mb-4">
+                    PHP 1000.00 test
+                  </h1>
+                  <h4 class="subheading">Winning Prices</h4>
+                </v-col>
+              </v-row>
+            </v-parallax>
+          </v-responsive>
+        </v-sheet>
+      </v-card>
     </main>
   </v-container>
 </template>
@@ -176,17 +167,17 @@ export default {
   right: 0 !important;
   bottom: 0 !important;
 }
-.v-item-group.v-bottom-navigation .v-btn{
+.v-item-group.v-bottom-navigation .v-btn {
   background-color: white;
-    border-radius: 0;
-    box-shadow: none;
-    flex: 0 1 auto;
-    font-size: 0.75rem;
-    height: inherit;
-    max-width: 168px;
-    min-width: 80px;
-    position: relative;
-    text-transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  flex: 0 1 auto;
+  font-size: 0.75rem;
+  height: inherit;
+  max-width: 168px;
+  min-width: 80px;
+  position: relative;
+  text-transform: none;
 }
 .v-app-bar--fixed {
   height: 64px;
@@ -231,14 +222,14 @@ body {
 }
 
 @media (max-width: 960px) {
- .v-btn:not(.v-btn--round).v-size--default {
+  .v-btn:not(.v-btn--round).v-size--default {
     height: 56px !important;
     min-width: 64px;
     padding: 0 16px;
-}
-.theme--light.v-btn.v-btn--has-bg {
+  }
+  .theme--light.v-btn.v-btn--has-bg {
     background-color: #ffffff !important;
-}
+  }
   .v-main {
     padding: 8px 0px 0px 0px;
     width: 100% !important;
@@ -249,6 +240,5 @@ body {
   .v-parallax h1 {
     margin-top: 50px !important;
   }
- 
 }
 </style>
