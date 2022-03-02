@@ -45,7 +45,7 @@
       <v-card class="mx-auto overflow-hidden" max-width="500">
         <v-bottom-navigation
           absolute
-          color="white"
+          color="primary"
           hide-on-scroll
           scroll-target="#scroll-threshold-example"
           scroll-threshold="500"
@@ -89,9 +89,9 @@
         <v-sheet
           id="scroll-threshold-example"
           class="overflow-y-auto pb-16"
-          height="90vh"
+          height="89vh"
         >
-          <v-responsive min-height="73vh">
+          <v-responsive min-height="71vh">
             <v-parallax
               dark
               height="250"
