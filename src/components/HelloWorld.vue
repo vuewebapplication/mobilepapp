@@ -169,12 +169,24 @@ export default {
 .v-item-group.v-bottom-navigation {
   z-index: 1 !important;
   border-radius: 0px !important;
-/* 
+
   border: none !important;
-  box-shadow: none !important; */
+  box-shadow: none !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+}
+.v-item-group.v-bottom-navigation .v-btn{
+  background-color: white;
+    border-radius: 0;
+    box-shadow: none;
+    flex: 0 1 auto;
+    font-size: 0.75rem;
+    height: inherit;
+    max-width: 168px;
+    min-width: 80px;
+    position: relative;
+    text-transform: none;
 }
 .v-app-bar--fixed {
   height: 64px;
@@ -210,36 +222,33 @@ body {
   width: 100% !important;
   overflow: hidden !important;
 }
-.v-parallax {
-}
+
 .container {
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden !important;
 }
-.v-card {
-}
+
 @media (max-width: 960px) {
-  .v-item-group.v-bottom-navigation--fixed {
-    margin: 0 0 0 11.2rem !important;
-    border-radius: 0px !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
+ .v-btn:not(.v-btn--round).v-size--default {
+    height: 56px !important;
+    min-width: 64px;
+    padding: 0 16px;
+}
+.theme--light.v-btn.v-btn--has-bg {
+    background-color: #ffffff !important;
+}
   .v-main {
     padding: 8px 0px 0px 0px;
     width: 100% !important;
   }
   .v-parallax {
     height: 250px !important;
-    top: 0px;
   }
   .v-parallax h1 {
     margin-top: 50px !important;
   }
-  .v-card {
-    top: 0px;
-  }
+ 
 }
 </style>
