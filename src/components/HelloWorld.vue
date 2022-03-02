@@ -29,7 +29,6 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="deep-purple accent-4" dark flat>
-      
       <v-toolbar-title>E-Wallet</v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -42,12 +41,63 @@
       </v-btn>
     </v-app-bar>
 
-    <main  id="scroll-threshold-example"
-          class="overflow-y-auto pb-16"
-          height="95vh">
-      
+    <main
+      id="scroll-threshold-example"
+      class="overflow-y-auto pb-16"
+      height="95vh"
+    >
       <v-card class="mx-auto overflow-hidden" max-width="500">
-        <v-bottom-navigation
+      
+        <v-card
+          flat
+          fixed
+          class="text-center primary fixedtitle"
+          elevation="1"
+          outlined
+        >
+          <h4>
+            <sup style="top: -15px">PHP</sup>
+            <span class="text-h4 font-weight-bold mb-2">1000.00 </span>
+          </h4>
+          <h4 class="subheading">Winning Prize</h4>
+        </v-card>
+
+        <v-sheet>
+          <v-card class="mx-auto imgbox" max-width="500">
+            <v-row dense>
+              <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
+                <v-card>
+                  <v-img
+                    :src="card.src"
+                    class="white--text align-end"
+                    gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                    height="200px"
+                  >
+                    <v-card-title v-text="card.title"></v-card-title>
+                  </v-img>
+
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+
+                    <v-btn icon>
+                      <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                      <v-icon>mdi-bookmark</v-icon>
+                    </v-btn>
+
+                    <v-btn icon>
+                      <v-icon>mdi-share-variant</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-card>
+          <v-responsive min-height="100vh"> </v-responsive>
+        </v-sheet>
+          <v-bottom-navigation
           fixed
           color="primary"
           hide-on-scroll
@@ -89,71 +139,6 @@
             </center>
           </v-btn>
         </v-bottom-navigation>
-
-        <v-sheet
-         
-        >
-
-        <v-card
-    class="mx-auto"
-    max-width="500"
-  >
-   
-
-
-      <v-row dense>
-        <v-col
-          v-for="card in cards"
-          :key="card.title"
-          :cols="card.flex"
-        >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-
-            <v-card-actions>
-              <v-spacer></v-spacer>
-
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-  </v-card>
-          <v-card
-            color="bg-info"
-              flat
-             dense
-            >
-              <v-row align="center" justify="center">
-                <v-col class="text-center" cols="12">
-                  <h1 class="text-h4 font-weight-thin mb-4">
-                    PHP 1000.00 test
-                  </h1>
-                  <h4 class="subheading">Winning Prize</h4>
-                </v-col>
-              </v-row>
-            </v-card>
-          <v-responsive min-height="100vh">
-          
-          </v-responsive>
-        </v-sheet>
       </v-card>
     </main>
   </v-container>
@@ -166,7 +151,8 @@ import {
   mdiAccountGroupOutline,
   mdiCheckboxMarkedCirclePlusOutline,
   mdiBallotRecountOutline,
-  mdiAccountDetailsOutline,mdiEmailOutline,
+  mdiAccountDetailsOutline,
+  mdiEmailOutline,
 } from "@mdi/js";
 export default {
   name: "HelloWorld",
@@ -180,9 +166,16 @@ export default {
       group: null,
       tabs: null,
       cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+        {
+          title: "Favorite road trips",
+          src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          flex: 6,
+        },
+        {
+          title: "Best airlines",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          flex: 6,
+        },
       ],
       items: [
         { title: "Home", icon: "mdi-home-city" },
@@ -195,7 +188,8 @@ export default {
         mdiHomeAccount,
         mdiCheckboxMarkedCirclePlusOutline,
         mdiBallotRecountOutline,
-        mdiAccountDetailsOutline,mdiEmailOutline,
+        mdiAccountDetailsOutline,
+        mdiEmailOutline,
       },
       right: null,
     };
@@ -208,6 +202,27 @@ export default {
 };
 </script>
 <style>
+.imgbox{
+  margin-top:105px !important;
+}
+.fixedtitle {
+  position: fixed !important;
+  width: 27.5rem !important;
+  height: 100px !important;
+  display: block !important;
+  z-index: 1000;
+  padding: 15px !important;
+}
+.v-sheet.v-card {
+  border-radius: 0px !important;
+}
+.v-application .primary {
+    background-color: #6200ea !important;
+    border-color: #6200ea !important
+}
+.theme--light.v-card {
+  color: rgb(255 255 255) !important;
+}
 .v-item-group.v-bottom-navigation {
   z-index: 1 !important;
   border-radius: 0px !important;
@@ -268,12 +283,14 @@ body {
 
 .container {
   max-width: 100% !important;
+  padding: 0px !important;
+  margin: 0 !important;
 }
 
 @media (max-width: 960px) {
   .v-navigation-drawer {
-  top: -34px !important;
-}
+    top: -34px !important;
+  }
   .v-btn:not(.v-btn--round).v-size--default {
     height: 56px !important;
     min-width: 64px;
