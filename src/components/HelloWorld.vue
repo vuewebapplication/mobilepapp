@@ -47,14 +47,7 @@
       height="95vh"
     >
       <v-card class="mx-auto overflow-hidden" max-width="500">
-      
-        <v-card
-          flat
-          fixed
-          class="text-center primary fixedtitle"
-          elevation="1"
-          outlined
-        >
+        <v-card fixed class="text-center fixedtitle" elevation="1" outlined>
           <h4>
             <sup style="top: -15px">PHP</sup>
             <span class="text-h4 font-weight-bold mb-2">1000.00 </span>
@@ -97,7 +90,7 @@
           </v-card>
           <v-responsive min-height="100vh"> </v-responsive>
         </v-sheet>
-          <v-bottom-navigation
+        <v-bottom-navigation
           fixed
           color="primary"
           hide-on-scroll
@@ -169,6 +162,11 @@ export default {
         {
           title: "Favorite road trips",
           src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
+          flex: 12,
+        },
+        {
+          title: "Favorite road trips",
+          src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
           flex: 6,
         },
         {
@@ -202,24 +200,23 @@ export default {
 };
 </script>
 <style>
-.imgbox{
-  margin-top:105px !important;
+.imgbox {
+  margin-top: 105px !important;
 }
 .fixedtitle {
   position: fixed !important;
   width: 27.5rem !important;
   height: 100px !important;
   display: block !important;
+  background-color: #6200ea !important;
+  border-color: #6200ea !important;
   z-index: 1000;
   padding: 15px !important;
 }
 .v-sheet.v-card {
   border-radius: 0px !important;
 }
-.v-application .primary {
-    background-color: #6200ea !important;
-    border-color: #6200ea !important
-}
+
 .theme--light.v-card {
   color: rgb(255 255 255) !important;
 }
