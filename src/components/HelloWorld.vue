@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container class="maincontainer" fluid>
     <v-navigation-drawer v-model="drawer" temporary app>
       <v-list-item>
         <v-list-item-content>
@@ -54,6 +54,7 @@
           </h4>
           <h4 class="subheading">Winning Prize</h4>
         </v-card>
+        <v-container fluid>
 
         <v-sheet>
           <v-card class="mx-auto imgbox" max-width="500">
@@ -90,6 +91,8 @@
           </v-card>
           <v-responsive min-height="100vh"> </v-responsive>
         </v-sheet>
+
+        </v-container>
         <v-bottom-navigation
           fixed
           color="primary"
@@ -201,7 +204,7 @@ export default {
 </script>
 <style>
 .imgbox {
-  margin-top: 105px !important;
+  margin-top: 100px !important;
 }
 .fixedtitle {
   position: fixed !important;
@@ -278,7 +281,7 @@ body {
   overflow: hidden !important;
 }
 
-.container {
+.maincontainer {
   max-width: 100% !important;
   padding: 0px !important;
   margin: 0 !important;
