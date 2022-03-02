@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-navigation-drawer v-model="drawer" temporary app>
       <v-list-item>
         <v-list-item-content>
@@ -29,22 +29,26 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="deep-purple accent-4" dark flat>
-      <v-toolbar-title>Spin to win</v-toolbar-title>
+      
+      <v-toolbar-title>E-Wallet</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      </v-btn> -->
 
       <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+        <v-icon>{{ icons.mdiEmailOutline }}</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <main>
+    <main  id="scroll-threshold-example"
+          class="overflow-y-auto pb-16"
+          height="95vh">
+      
       <v-card class="mx-auto overflow-hidden" max-width="500">
         <v-bottom-navigation
-          absolute
+          fixed
           color="primary"
           hide-on-scroll
           scroll-target="#scroll-threshold-example"
@@ -87,25 +91,67 @@
         </v-bottom-navigation>
 
         <v-sheet
-          id="scroll-threshold-example"
-          class="overflow-y-auto pb-16"
-          height="89vh"
+         
         >
-          <v-responsive min-height="71vh">
-            <v-parallax
-              dark
-              height="250"
-              src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+
+        <v-card
+    class="mx-auto"
+    max-width="500"
+  >
+   
+
+
+      <v-row dense>
+        <v-col
+          v-for="card in cards"
+          :key="card.title"
+          :cols="card.flex"
+        >
+          <v-card>
+            <v-img
+              :src="card.src"
+              class="white--text align-end"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="200px"
+            >
+              <v-card-title v-text="card.title"></v-card-title>
+            </v-img>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+
+              <v-btn icon>
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+
+              <v-btn icon>
+                <v-icon>mdi-bookmark</v-icon>
+              </v-btn>
+
+              <v-btn icon>
+                <v-icon>mdi-share-variant</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+  </v-card>
+          <v-card
+            color="bg-info"
+              flat
+             dense
             >
               <v-row align="center" justify="center">
                 <v-col class="text-center" cols="12">
                   <h1 class="text-h4 font-weight-thin mb-4">
                     PHP 1000.00 test
                   </h1>
-                  <h4 class="subheading">Winning Prices</h4>
+                  <h4 class="subheading">Winning Prize</h4>
                 </v-col>
               </v-row>
-            </v-parallax>
+            </v-card>
+          <v-responsive min-height="100vh">
+          
           </v-responsive>
         </v-sheet>
       </v-card>
@@ -120,7 +166,7 @@ import {
   mdiAccountGroupOutline,
   mdiCheckboxMarkedCirclePlusOutline,
   mdiBallotRecountOutline,
-  mdiAccountDetailsOutline,
+  mdiAccountDetailsOutline,mdiEmailOutline,
 } from "@mdi/js";
 export default {
   name: "HelloWorld",
@@ -133,6 +179,11 @@ export default {
       drawer: false,
       group: null,
       tabs: null,
+      cards: [
+        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+      ],
       items: [
         { title: "Home", icon: "mdi-home-city" },
         { title: "My Account", icon: "mdi-account" },
@@ -144,7 +195,7 @@ export default {
         mdiHomeAccount,
         mdiCheckboxMarkedCirclePlusOutline,
         mdiBallotRecountOutline,
-        mdiAccountDetailsOutline,
+        mdiAccountDetailsOutline,mdiEmailOutline,
       },
       right: null,
     };
@@ -187,6 +238,7 @@ export default {
   margin: 0 auto !important;
 }
 .v-navigation-drawer {
+  top: -45px !important;
   margin: 0 auto !important;
 }
 .v-navigation-drawer--fixed {
@@ -216,12 +268,12 @@ body {
 
 .container {
   max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
 }
 
 @media (max-width: 960px) {
+  .v-navigation-drawer {
+  top: -34px !important;
+}
   .v-btn:not(.v-btn--round).v-size--default {
     height: 56px !important;
     min-width: 64px;
@@ -235,10 +287,10 @@ body {
     width: 100% !important;
   }
   .v-parallax {
-    height: 250px !important;
+    height: 200px !important;
   }
   .v-parallax h1 {
-    margin-top: 50px !important;
+    margin-top: 20px !important;
   }
 }
 </style>
