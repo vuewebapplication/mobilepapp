@@ -302,7 +302,7 @@ body {
   margin: 0 !important;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px) and (max-width: 640) {
   .v-item-group.v-bottom-navigation--fixed {
     bottom: 0 !important;
     left: 0 !important;
@@ -333,7 +333,6 @@ body {
   }
   .v-navigation-drawer--fixed {
     position: fixed !important;
-    width: 70% !important;
     height: 100% !important;
     bottom: 0px !important;
     right: 0% !important;
