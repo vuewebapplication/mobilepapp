@@ -136,7 +136,6 @@
                 <v-icon>{{ icons.mdiBallotRecountOutline }}</v-icon>
               </center>
             </v-btn>
-
             <v-btn color="accent-4" @click="drawer = !drawer">
               <span>My</span>
               <center>

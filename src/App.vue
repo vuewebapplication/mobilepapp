@@ -1,36 +1,27 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld />
-    
+      <sidebar></sidebar>
+      <nav-title></nav-title>
+       <nav-price></nav-price>
+       <router-view></router-view>
+       <navbar></navbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
+import Sidebar from './layouts/Sidebar.vue';
+import NavTitle from './layouts/NavTitle.vue';
+import NavPrice from './layouts/NavPrice.vue';
+import Navbar from './layouts/Navbar.vue';
 export default {
-  name: "App",
-
-  components: {
-    HelloWorld,
+  name:'App',
+  components:{
+    Sidebar,
+    NavTitle,
+    NavPrice,
+    Navbar,
   },
-
-  data: () => ({ 
-    right: true,
-    hidden: false,
-    bottom: true,
-  }),
 };
 </script>
-<style>
-/* This is for documentation purposes and will not be needed in your application */
-#create .v-speed-dial {
-  position: absolute;
-}
-
-#create .v-btn--floating {
-  position: relative;
-}
-</style>
